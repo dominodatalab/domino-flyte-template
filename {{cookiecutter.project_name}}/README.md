@@ -4,7 +4,7 @@ A template for the recommended layout of a Flyte enabled repository for Domino j
 
 ## Usage
 
-`pyflyte init [your-template-name] --template /usr/local/share/domino-flyte-template-0.0.1`
+`pyflyte init [your-template-name] --template /usr/local/share/domino-flyte-template-0.0.2`
 
 Docs: https://docs.dominodatalab.com/en/latest/api_guide/d982cc/get-api-key/
 Configure the api_key or this will fail.
