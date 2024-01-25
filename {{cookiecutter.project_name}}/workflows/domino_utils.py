@@ -1,6 +1,5 @@
 import os
 
-# Should be env var - see https://github.com/cerebrotech/domino/pull/39055/files
 def get_host(host = None):
     if host is not None:
         return host
@@ -8,7 +7,6 @@ def get_host(host = None):
     return host
 
 
-# Alternative to os.getenv - pass in via CLI
 def get_project(project = None):
     if project is not None:
         return project
@@ -17,7 +15,7 @@ def get_project(project = None):
     return f"{owner}/{name}"
 
 
-# Idea: programmatically fill in the api key
+# TODO: see if possible to programmatically fill in api key
 # https://docs.dominodatalab.com/en/latest/api_guide/d982cc/get-api-key/
 def get_api_key(api_key = None):
     if api_key is not None:
