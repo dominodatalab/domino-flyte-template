@@ -1,13 +1,17 @@
 import time
 import requests
 from flytekit import task, workflow
+from domino_utils import get_host, get_project, get_api_key
 
 def start_job(
     command: str,
-    host = "https://pipe-research.train-sandbox.domino.tech",
-    project: str = "integration-test/flyte-school",
-    api_key: str = "192e5eb8d2858f468ae1e366aa3a63a26a8f65d5e8d0c1beecf7decb5c09e2ac",
+    host = None,
+    project: str = None,
+    api_key: str = None
 ) -> str:
+    host = get_host(host)
+    project = get_project(project)
+    api_key = get_api_key(api_key)
 
     start_job_url = f"{host}/v1/projects/{project}/runs"
 
