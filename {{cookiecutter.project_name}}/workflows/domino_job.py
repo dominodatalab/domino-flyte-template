@@ -55,14 +55,16 @@ def start_job(
 
 
 @task
-def domino_job_task_http(command: str) -> str:
-    return start_job(command=command)
+def domino_job_task_http(command: str, api_key: str) -> str:
+    return start_job(command=command, api_key=api_key)
 
 
 @workflow
-def domino_job_workflow(command: str) -> str:
-    return domino_job_task_http(command=command)
+def domino_job_workflow(command: str, api_key: str) -> str:
+    return domino_job_task_http(command=command, api_key=api_key)
     
 
 if __name__ == "__main__":
-    domino_job_workflow(command="mlflow-job.py")
+    # Docs: https://docs.dominodatalab.com/en/latest/api_guide/d982cc/get-api-key/
+    # Configure the api_key or this will fail.
+    domino_job_workflow(command="mlflow-job.py",api_key=None)

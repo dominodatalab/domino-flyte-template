@@ -7,17 +7,13 @@ A template for the recommended layout of a Flyte enabled repository for code wri
 To get up and running with your Flyte project, we recommend following the
 [Flyte getting started guide](https://docs.flyte.org/en/latest/getting_started.html).
 
-1. a few notes about things to modify in the workflow and how to run the pipeline from the command line
-
 ## Notes
-
-`pyflyte init rliu --template ~/domino-flyte-template-0.0.1`
 
 `pyflyte init rliu --template /usr/local/share/domino-flyte-template-0.0.1`
 
-Configure the host, project, api_key or the next step will fail.
-
+Docs: https://docs.dominodatalab.com/en/latest/api_guide/d982cc/get-api-key/
+Configure the api_key or this will fail.
 ```sh
 cd rliu/workflows
-pyflyte run domino_job.py domino_job_workflow --command mlflow-job.py
+pyflyte run domino_job.py domino_job_workflow --command mlflow-job.py --api_key [your-api-key]
 ```
